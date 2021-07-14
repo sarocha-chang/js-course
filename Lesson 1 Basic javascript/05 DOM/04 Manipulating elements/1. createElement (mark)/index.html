@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>JS CreateElement Demo</title>
+  </head>
+  <body>
+    <div id="test"></div>
+    <script>
+      let div = document.createElement("div");
+      div.innerHTML = "<p>CreateElement example</p>";
+      div.id = "content";
+      div.className = "note";
+      document.body.appendChild(div);
+
+      document.getElementById("test").innerText = "<h1>Test</h1>";
+      document.getElementById("demo").innerHTML = "Paragraph changed!";
+    </script>
+  </body>
+</html>

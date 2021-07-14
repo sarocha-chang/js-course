@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      input.error {
+        border: 1px solid red;
+      }
+      .warning-text {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="/signup" method="post" id="signup">
+      <input id="email" type="email" name="email" placeholder="Email Address" />
+      <p id="warning-error"></p>
+      <input type="submit" value="Subscribe" />
+    </form>
+
+    <script>
+      let form = document.getElementById("signup");
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        let email = form.elements["email"];
+        let emailAddress = email.value;
+
+        if (!emailAddress) {
+          let email = document.getElementById("email");
+          document.getElementById("warning-error").innerHTML =
+            "Field is reqired.";
+        } else {
+          document.getElementById("warning-error").innerHTML = "";
+          document.getElementById("signup").innerHTML = emailAddress;
+          document.getElementById("email").classList.remove("error");
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>JS Get Child Elements</title>
+  </head>
+  <body>
+    <ul id="menu">
+      <li>Home</li>
+      <li>Products</li>
+      <li class="current">Customer Support</li>
+      <li>Careers</li>
+      <li>Investors</li>
+      <li>News</li>
+      <li class="last">About Us</li>
+    </ul>
+  </body>
+
+  <script>
+    let current = document.querySelector(".current");
+    let nextSibling = current.nextElementSibling;
+    let previouse = current.previousElementSibling;
+    console.log(`nextSibling`, nextSibling);
+    console.log(`previouse`, previouse);
+  </script>
+</html>

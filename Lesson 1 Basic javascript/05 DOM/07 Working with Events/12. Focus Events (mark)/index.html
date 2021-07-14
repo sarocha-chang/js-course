@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript Focus Events</title>
+  </head>
+  <body>
+    <p>Move focus to the password field to see the effect:</p>
+
+    <form id="form">
+      <input type="text" placeholder="username" />
+      <input type="password" placeholder="password" />
+    </form>
+
+    <script>
+      const pwd = document.querySelector('input[type="password"]');
+
+      pwd.addEventListener("focus", (e) => {
+        e.target.style.backgroundColor = "yellow";
+      });
+
+      pwd.addEventListener("blur", (e) => {
+        e.target.style.backgroundColor = "";
+      });
+
+      pwd.addEventListener("change", (e) => {
+        console.log(`onChange Test`, e.target.value);
+      });
+
+      pwd.addEventListener("keydown", (e) => {
+        console.log(`keydown`, e.target.value);
+      });
+
+      pwd.addEventListener("keyup", (e) => {
+        console.log(`keyup`, e.target.value);
+      });
+
+      pwd.addEventListener("keypress", (e) => {
+        console.log(`keypress`, e.target.value);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form
+      action="form.html"
+      method="post"
+      name="myForm"
+      onsubmit="return formValid();"
+    >
+      <div id="container">
+        <table>
+          <tr>
+            <td>First Name</td>
+            <td>
+              <input type="text" name="fname" />
+            </td>
+          </tr>
+          <tr>
+            <td>Last Name</td>
+            <td>
+              <input type="text" name="lname" />
+            </td>
+          </tr>
+          <tr>
+            <td>User ID</td>
+            <td>
+              <input type="text" name="uid" />
+            </td>
+          </tr>
+          <tr>
+            <td>Password</td>
+            <td>
+              <input type="password" name="pass" />
+            </td>
+          </tr>
+          <tr>
+            <td>Confirm Password</td>
+            <td>
+              <input type="password" name="cpass" />
+            </td>
+          </tr>
+          <tr>
+            <td>Faculty Type</td>
+            <td>
+              <select name="ftype">
+                <option value="">Select</option>
+                <option value="HOD">HOD</option>
+                <option value="Assistant Proffesor">Assistant Proffesor</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Deparment</td>
+            <td>
+              <select name="dep">
+                <option value="">Select</option>
+                <option value="CSE">CSE</option>
+                <option value="EC">EC</option>
+                <option value="ME">ME</option>
+                <option value="CIVIL">CIVIL</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Mobile Number</td>
+            <td>
+              <input type="text" name="mnum" />
+            </td>
+          </tr>
+          <tr>
+            <td>E-mail</td>
+            <td>
+              <input type="text" name="email" />
+            </td>
+          </tr>
+        </table>
+        <input type="reset" name="btnReset" value="Reset" />
+        <input type="submit" name="btnRegister" value="Register" />
+      </div>
+    </form>
+    <script>
+      function formValid() {
+        var fname = document.getElementsByName("fname")[0].value;
+        var lname = document.getElementsByName("lname")[0].value;
+        var uid = document.getElementsByName("uid")[0].value;
+        var pass = document.getElementsByName("pass")[0].value;
+        var ftype =
+          document.getElementsByName("ftype")[0][
+            document.getElementsByName("ftype")[0].selectedIndex
+          ].value;
+        var dep =
+          document.getElementsByName("dep")[0][
+            document.getElementsByName("dep")[0].selectedIndex
+          ].value;
+        var mnum = document.getElementsByName("mnum")[0].value;
+        var cpass = document.getElementsByName("cpass")[0].value;
+        var email = document.getElementsByName("email")[0].value;
+
+        if ((fname == null || fname == "") && (lname == null || lname == "")) {
+          alert("Enter Your name ");
+          return false;
+        }
+
+        if (uid == null || uid == "") {
+          alert("Enter your user ID");
+          return false;
+        }
+        if ((pass == null || pass == "") && (cpass == null || cpass == "")) {
+          alert("Enter password");
+          return false;
+        }
+        if (pass != cpass) {
+          alert("Password doesnt match");
+          return false;
+        }
+        if (ftype == null || ftype == "") {
+          alert("Select faculty type");
+          return false;
+        }
+        if (dep == null || dep == "") {
+          alert("select department ");
+          return false;
+        }
+        if (mnum == null || mnum == "") {
+          alert("Enter your Mobile number");
+          return false;
+        }
+
+        if (email == null || email == "") {
+          alert("Enter your email number");
+          return false;
+        }
+
+        alert("Form Validated Successfully! Submitting Details...");
+        return false; // Make this return true to submit form
+      }
+    </script>
+  </body>
+</html>
